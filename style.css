@@ -1,7 +1,5 @@
-@font-face {
-    font-family: 'Skope Regular';
-    src: url('./fonts/Skope Regular.ttf') format('truetype');
-}
+@import url("https://use.typekit.net/pbe3vap.css");
+
 
 body {
     display: flex; /* 使用 Flexbox 布局 */
@@ -28,21 +26,3 @@ body {
     object-fit: contain; /* 保持图片内容完整 */
 }
 
-.txt {
-    font-family: 'Skope Regular', serif; /* 应用新字体 */
-    font-weight: 200;           /* 字体粗细 */
-    font-style: normal;         /* 字体样式 */
-    font-size: 1.5rem;          /* 设置字体大小 */
-    color: #333;                /* 字体颜色 */
-    text-align: center;         /* 文本居中 */
-    line-height: 1.6;           /* 设置行高 */
-    background-color: #fff;     /* 卡片背景 */
-    border-radius: 8px;         /* 圆角 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 阴影 */
-    padding: 1rem;              /* 内边距 */
-    transition: transform 0.3s ease; /* 动效 */
-}
-
-.txt:hover {
-    transform: scale(1.05); /* 鼠标悬停时放大效果 */
-}
