@@ -1,0 +1,27 @@
+body {
+    display: flex; /* 使用 Flexbox 布局 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    height: 100vh; /* 让 body 占满整个视口高度 */
+    background: #95a5a6; /* 背景颜色 */
+    margin: 0; /* 移除默认外边距 */
+}
+
+.card {
+    display: grid; /* 使用网格布局 */
+    gap: 2rem; /* 卡片之间的间距 */
+    grid-auto-flow: dense; /* 自动调整布局 */
+    grid-template-columns: repeat(4, 30ch); /* 定义 4 列，每列宽度为 30ch */
+    max-width: 90vw; /* 限制最大宽度为视口宽度的 90% */
+    max-height: 90vh; /* 限制最大高度为视口高度的 90% */
+    margin: auto; /* 确保内容在父容器中自动居中 */
+}
+
+.txt img {
+    aspect-ratio: 1 / 1; /* 强制 1:1 比例 */
+    object-fit: contain; /* 保持图片内容完整 */
+}
+
+.txt {
+    grid-column: span 2; /* 每个 .txt 自动占两列 */
+}
