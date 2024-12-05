@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Skope Regular';
+    src: url('./fonts/Skope Regular.ttf') format('truetype');
+}
+
 body {
     display: flex; /* 使用 Flexbox 布局 */
     justify-content: center; /* 水平居中 */
@@ -5,6 +10,7 @@ body {
     height: 100vh; /* 让 body 占满整个视口高度 */
     background: #95a5a6; /* 背景颜色 */
     margin: 0; /* 移除默认外边距 */
+    font-family: 'Skope Regular', sans-serif; /* 应用自定义字体 */
 }
 
 .card {
@@ -23,5 +29,20 @@ body {
 }
 
 .txt {
-    grid-column: span 2; /* 每个 .txt 自动占两列 */
+    font-family: 'Skope Regular', serif; /* 应用新字体 */
+    font-weight: 200;           /* 字体粗细 */
+    font-style: normal;         /* 字体样式 */
+    font-size: 1.5rem;          /* 设置字体大小 */
+    color: #333;                /* 字体颜色 */
+    text-align: center;         /* 文本居中 */
+    line-height: 1.6;           /* 设置行高 */
+    background-color: #fff;     /* 卡片背景 */
+    border-radius: 8px;         /* 圆角 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 阴影 */
+    padding: 1rem;              /* 内边距 */
+    transition: transform 0.3s ease; /* 动效 */
+}
+
+.txt:hover {
+    transform: scale(1.05); /* 鼠标悬停时放大效果 */
 }

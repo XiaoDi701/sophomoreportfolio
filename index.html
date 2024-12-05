@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        (function(d) {
+            var config = {
+                kitId: 'pbe3vap',
+                scriptTimeout: 3000,
+                async: true
+            },
+            h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src="https://use.typekit.net/"+config.kitId+".js";tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+    </script>
     <style>
         * {
             box-sizing: border-box;
@@ -14,9 +24,26 @@
             min-block-size: 100%;
             display: grid;
             padding-block: 5vh; 
-            background: #060270;
+            background: #060270; /* 背景基色 */
             place-items: center; 
+            background-image: 
+                linear-gradient(to top, rgba(6, 2, 112, 1) 20%, rgba(6, 2, 112, 0) 100%), /* 渐变透明 */
+                radial-gradient(circle, #030140 30px, transparent 30px), /* 深色波点 */
+                radial-gradient(circle, #030140 30px, transparent 30px); /* 第二层波点 */
+            background-size: 50px 50px, 100px 100px, 100px 100px; /* 不同层的间距 */
+            background-position: 0 100%, 0 0, 50px 50px; /* 调整渐变和波点位置 */
+            animation: move-dots 10s infinite linear;
         }
+
+        @keyframes move-dots {
+            0% {
+                background-position: 0 100%, 0 0, 50px 50px;
+            }
+            100% {
+                background-position: 0 100%, 100px 100px, 150px 150px;
+            }
+        }
+
         @keyframes slide-fade-in {
             from {
                 opacity: 0;
@@ -24,6 +51,7 @@
                 transform: scale(.0) translate(15vh);
             }
         }
+
         .card {
             display: grid;
             gap: 2rem;
@@ -32,37 +60,42 @@
             justify-content: center; /* 水平居中 */
             align-items: start; /* 垂直方向从顶部开始 */
         }
+
         .txt {
-    overflow: hidden;
-    animation: slide-fade-in both;
-    animation-timeline: view();
-    animation-range: contain 0% contain 50%;
-    border-radius: 10px;
-    line-height: 6;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-    font-size: 32px;
-    letter-spacing: 5px;
-    color: #fff;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color:#FFAE01; /* 修正此处 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+            overflow: hidden;
+            animation: slide-fade-in both;
+            animation-timeline: view();
+            animation-range: contain 0% contain 50%;
+            border-radius: 10px;
+            line-height: 6;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            font-size: 32px;
+            letter-spacing: 5px;
+            color: #fff;
+            width: 100%;
+            height: 100%;
+            background-color: #FFAE01;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'futura-pt', sans-serif; /* 仅修改文字字体 */
+        }
+
         .txt img {
             max-width: 100%;
             max-height: 100%;
             height: auto;
             width: auto;
         }
+
         .txt:nth-of-type(4n) {
             grid-column: span 2;
         }
+
         .txt:nth-of-type(5n) {
             grid-column: span 2;
         }
+
         .txt:nth-of-type(7n) {
             grid-column: span 2;
         }
@@ -78,7 +111,7 @@
         <div class="txt">TEXT</div>
     
         <!-- 第五个图片，占据一格 -->
-               <div class="txt">TEXT</div>
+        <div class="txt">TEXT</div>
         <div class="txt">TEXT</div> 
         <div class="txt" style="grid-column: span 2;"><img src="labmid.jpg" alt="labmid.jpg"></div>
         <div class="txt">TEXT</div>
