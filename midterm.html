@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入 Google Fonts 的像素字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        .fixed-bar {
+            position: fixed; /* 固定位置 */
+            top: 0;
+            left: 50%; /* 水平居中 */
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1200px; /* 限制条的宽度 */
+            height: 100%; /* 覆盖整个页面高度 */
+            background: rgba(0, 0, 0, 0.5); /* 半透明黑色背景 */
+            z-index: -1; /* 放在文字后面 */
+        }
+        body {
+            min-block-size: 100%;
+            display: grid;
+            padding-block: 5vh;
+            background: #060270; /* 背景基色 */
+            place-items: center;
+            background-image: 
+                linear-gradient(to top, rgba(6, 2, 112, 1) 20%, rgba(6, 2, 112, 0) 100%), /* 渐变透明 */
+                radial-gradient(circle, #030140 30px, transparent 30px), /* 深色波点 */
+                radial-gradient(circle, #030140 30px, transparent 30px); /* 第二层波点 */
+            background-size: 50px 50px, 100px 100px, 100px 100px; /* 不同层的间距 */
+            background-position: 0 100%, 0 0, 50px 50px; /* 调整渐变和波点位置 */
+            animation: move-dots 10s infinite linear;
+        }
+
+        @keyframes move-dots {
+            0% {
+                background-position: 0 100%, 0 0, 50px 50px;
+            }
+            100% {
+                background-position: 0 0, 0 0, 50px 50px;
+            }
+        }
+
+        h1 {
+            color: orange; /* 橘黄色字体 */
+            font-size: 100px; /* 设置字体大小 */
+            font-weight: bold; /* 加粗字体 */
+            text-align: center; /* 居中对齐（如果需要） */
+            font-family: 'Press Start 2P', cursive; /* 应用像素风格字体 */
+            margin-bottom: 1em;
+        }
+        p {
+            color: orange; /* 橘黄色字体 */
+            font-size: 14px; /* 调整字体大小 */
+            font-family: 'Press Start 2P', cursive; /* 应用像素风格字体 */
+            line-height: 1.5; /* 调整行距 */
+            text-align: center; /* 居中对齐 */
+            max-width: 1000px; /* 限制段落宽度 */
+        }
+    </style>
+</head>
+<body>
+    <div class="fixed-bar"></div>
+    <h1>What I've Done</h1>
+
+    <p>
+        The concept behind this work is to artistically reveal the real harm that mental issues can bring to individuals; it is a piece with a strong educational intent.<br><br>
+        As someone who has experienced (or is still experiencing) various mental health challenges, I’m often asked by people around me who are mentally healthy, “Do you think I have a mental illness?”
+    </p>
+    <p>
+        From a scientific perspective, even mild depression or anxiety counts as a mental health issue. Out of responsibility and a mindset toward prevention, I sometimes respond, “Maybe.”<br><br>
+        Mental health issues seem to have become a kind of trendy label—I've even encountered people who exaggerate or fabricate symptoms just to align with it.
+    </p>
+    <p>
+        But when these people truly witness an acute episode—whether my own or someone else's—they often react with shock:<br>
+        “Is that what mental illness is really like? That’s so deranged, terrifying, disgusting. I am not mentally ill! How could you assume I was?”
+    </p>
+    <p>
+        Yet this is what mental illness has always been. When you experience moderate to severe mental issues, it’s not just about melancholic days or heartache.<br><br>
+        You’ll face symptoms like stage 2 hypertension, vomiting, a feeling of imminent death, dizziness, asthma, and uncontrollable urges to self-harm or even suicidal impulses.<br><br>
+        Mental illness is a real illness—it’s painful, it’s negative, and it’s something patients would give anything to shed for life.
+    </p>
+    <p>
+        The primary concept woven into this work is <strong>“Do What I've Done”</strong>.<br><br>
+        If you believe you have mental health issues, then come experience everything I’ve been through.<br><br>
+        Do you think uncontrollable outbursts are trendy? Do you find unstoppable self-harm (a “fun fact”: during a panic attack, it’s nearly impossible to regain composure without self-harm) is something cool?<br><br>
+        Do you see the ceaseless thoughts that cloud the mind as unique?
+    </p>
+    <p>
+        You wouldn’t—because you don’t have a mental illness.<br><br>
+        You are healthy and whole, the way mental health patients long to be.<br><br>
+        Live well.
+    </p>
+</body>
+</html>

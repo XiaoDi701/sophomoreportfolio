@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入 Google Fonts 的像素字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            min-block-size: 100%;
+            display: grid;
+            padding-block: 5vh;
+            background: #060270; /* 背景基色 */
+            place-items: center;
+            background-image: 
+                linear-gradient(to top, rgba(6, 2, 112, 1) 20%, rgba(6, 2, 112, 0) 100%), /* 渐变透明 */
+                radial-gradient(circle, #030140 30px, transparent 30px), /* 深色波点 */
+                radial-gradient(circle, #030140 30px, transparent 30px); /* 第二层波点 */
+            background-size: 50px 50px, 100px 100px, 100px 100px; /* 不同层的间距 */
+            background-position: 0 100%, 0 0, 50px 50px; /* 调整渐变和波点位置 */
+            animation: move-dots 10s infinite linear;
+        }
+
+        @keyframes move-dots {
+            0% {
+                background-position: 0 100%, 0 0, 50px 50px;
+            }
+            100% {
+                background-position: 0 0, 0 0, 50px 50px;
+            }
+        }
+
+        .fixed-bar {
+            position: fixed; /* 固定位置 */
+            top: 0;
+            left: 50%; /* 水平居中 */
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1200px; /* 限制条的宽度 */
+            height: 100%; /* 覆盖整个页面高度 */
+            background: rgba(0, 0, 0, 0.5); /* 半透明黑色背景 */
+            z-index: -1; /* 放在文字后面 */
+        }
+
+        h1 {
+            color: orange; /* 橘黄色字体 */
+            font-size: 100px; /* 设置字体大小 */
+            font-weight: bold; /* 加粗字体 */
+            text-align: center; /* 居中对齐（如果需要） */
+            font-family: 'Press Start 2P', cursive; /* 应用像素风格字体 */
+            margin-bottom: 1em;
+        }
+        p {
+            color: orange; /* 橘黄色字体 */
+            font-size: 14px; /* 调整字体大小 */
+            font-family: 'Press Start 2P', cursive; /* 应用像素风格字体 */
+            line-height: 1.5; /* 调整行距 */
+            text-align: center; /* 居中对齐 */
+            max-width: 1000px; /* 限制段落宽度 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 黑色半透明条 -->
+    <div class="fixed-bar"></div>
+    
+    <h1>Pupil of Night</h1>
+    <p>
+        In this project, the data I visualized is the "amount of time I sleep." After confirming several times that there were no required functions for this assignment, I decided to create something more artistic and personal.
+    </p>
+    <p>
+        My idea is to make a "pupil." I originally made the white part of the eye as well, but unfortunately, because I didn't know how to adjust the distance between two 3D objects, the effect wasn't great, so I removed it. The pupil consists of 7 rings, each made up of different squares. The number of squares in each ring represents the number of minutes I slept from Monday to Sunday.
+    </p>
+    <p>
+         I found that I go to bed early, possibly due to my anxiety or because I have so much to do—but I'm also someone who enjoys lying in bed and drifting into a beautiful sleep. This contradiction inspired me to create this piece. It's a deep, rotating eye that gazes at you, layer by layer.
+    </p>
+    <p>
+        As you can see, the number of small squares in each ring reflects how long I slept (in minutes), which is part of how I visualized my data. In my initial idea, I only wanted to create concentric circles, but later I decided to make them move! So I explored the 3D functions in p5.js, and I think this was an interesting experiment.
+      </p>
+</body>
+</html>
