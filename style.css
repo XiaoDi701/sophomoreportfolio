@@ -80,14 +80,13 @@ html, body {
 
 
 
-/* 重置默认样式 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* 设置页面高度为100%视口高度 */
+
 html, body {
     height: 100%;
     font-family: "tt-modernoir", sans-serif; /* 使用 Adobe Fonts 字体 */
@@ -104,7 +103,7 @@ html, body {
     position: relative;
 }
 
-/* 每个分区的基本样式 */
+
 .quadrant {
     width: 50%;
     height: 50%;
@@ -114,7 +113,7 @@ html, body {
     overflow: hidden; /* 防止小正方形超出区域 */
 }
 
-/* 鼠标悬停时的渐变效果 */
+
 .top-left:hover {
     background-color: #FF1739; /* 左上角悬停颜色 */
 }
@@ -131,7 +130,7 @@ html, body {
     background-color: #0C1C23; /* 右下角悬停颜色 */
 }
 
-/* 小正方形的基本样式 */
+/* 小正方形 */
 .inner-square {
     width: 70px; /* 初始大小为70px */
     height: 70px;
@@ -277,31 +276,29 @@ html, body {
     position: absolute;
     font-size: 100px;
     line-height: 1.2;
-    color: #040E93; /* 默认文字颜色 */
-    writing-mode: vertical-rl; /* 竖排文字 */
+    color: #040E93; 
+    writing-mode: vertical-rl; 
     text-align: left;
     z-index: 10; /* 确保文字在小正方形之上 */
 }
 
-/* 左上角文字 */
+
 .top-left .text {
     top: 50px;
     left: 50px;
 }
 
-/* 右上角文字 */
 .top-right .text {
     top: 50px;
     right: 50px;
 }
 
-/* 左下角文字 */
 .bottom-left .text {
     bottom: 50px;
     left: 50px;
 }
 
-/* 右下角文字 */
+
 .bottom-right .text {
     bottom: 50px;
     right: 50px;

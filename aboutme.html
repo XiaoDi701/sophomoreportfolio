@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-   
+  
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         * {
@@ -16,13 +16,13 @@
             min-block-size: 100%;
             display: grid;
             padding-block: 5vh;
-            background: #060270; 
+            background: #060270;
             place-items: center;
             background-image: 
                 linear-gradient(to top, rgba(6, 2, 112, 1) 20%, rgba(6, 2, 112, 0) 100%), 
                 radial-gradient(circle, #030140 30px, transparent 30px), 
-                radial-gradient(circle, #030140 30px, transparent 30px); 
-            background-size: 50px 50px, 100px 100px, 100px 100px;
+                radial-gradient(circle, #030140 30px, transparent 30px);
+            background-size: 50px 50px, 100px 100px, 100px 100px; 
             background-position: 0 100%, 0 0, 50px 50px; 
             animation: move-dots 10s infinite linear;
         }
@@ -51,41 +51,44 @@
         h1 {
             color: orange; 
             font-size: 100px; 
-            font-weight: bold;
-            text-align: center;
-            font-family: 'Press Start 2P', cursive;
+            font-weight: bold; 
+            text-align: center; 
+            font-family: 'Press Start 2P', cursive; 
             margin-bottom: 1em;
         }
+
+        .content {
+            display: flex;
+            align-items: flex-start; 
+            max-width: 1000px; 
+        }
+
+        .content img {
+            width: 200px; 
+            height: auto; 
+            margin-right: 20px; 
+        }
+
         p {
             color: orange; 
-            font-size: 14px;
+            font-size: 14px; 
             font-family: 'Press Start 2P', cursive; 
             line-height: 1.5; 
-            text-align: center; 
-            max-width: 1000px; 
+            text-align: left; 
+            flex: 1; 
         }
     </style>
 </head>
 <body>
-
+   
     <div class="fixed-bar"></div>
     
-    <h1>Color Book</h1>
-    <p>
-        This is a drawing game where you can create the environment where this little monster lives.  
-        Team members: Bruno, Di, Victoria. The code for this sketch was completed by me alone (Di).  
-    </p>
-    <p>
-        The main technical points of this project, aside from the assignment's requirements, include the use of the `constrain` function, uploading an image, and switching colors using buttons (storing and defining RGB values).
-    </p>
-    <p>
-        My favorite part is that you can press "enter" to save your drawing as an image, which adds interactivity to the project.  
-    </p>
-    <p>
-        The idea for this project came from the fact that both my teammates and I didn't draw the monster's habitat background, only the background itself. But I wanted to add something interactive, so I created this coloring game.    
-    </p>
-    <p>
-        Although I'm not entirely sure why, I have a feeling it might be some kind of sea monster, so I drew its environment this way.      
-    </p>
+    <h1>About Me</h1>
+    <div class="content">
+        <img src="sp.jpg" alt="Di Xiao's Image"> 
+        <p>
+            I'm Di Xiao, a game designer and illustrator from China. I specialize in Unity, digital and traditional painting, and Blender modeling. I love making games, drawing, listening to music, and creating my own OCs. For me, OCs aren't just a hobby—they're also my work. I want to create fun, beautiful, and heartwarming stories and share them with more people, especially kids. At the same time, I also enjoy making works that explore social issues, reflecting my thoughts on society and the world we live in today. I hope to create even more great works in the future!
+        </p>
+    </div>
 </body>
 </html>

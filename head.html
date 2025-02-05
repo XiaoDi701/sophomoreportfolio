@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- 引入 Google Fonts 的像素字体 -->
+ 
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         * {
@@ -49,31 +49,31 @@
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 每行两张图片 */
-            gap: 20px; /* 图片之间的间距 */
-            max-width: 800px; /* 图片库的最大宽度 */
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px; 
+            max-width: 800px; 
             justify-content: center;
         }
 
         .gallery a {
-            display: block; /* 保证图片点击区域完整 */
-            text-decoration: none; /* 移除默认链接样式 */
+            display: block; 
+            text-decoration: none; 
         }
 
         .gallery img {
-            width: 100%; /* 图片宽度自适应网格 */
-            max-width: 350px; /* 限制单张图片的最大宽度 */
+            width: 100%; 
+            max-width: 350px; 
             height: auto;
             border: 3px solid orange;
             border-radius: 10px;
             opacity: 0;
             transform: translateY(50px);
-            transition: opacity 1s ease, transform 1s ease, transform 0.3s ease; /* 添加平滑缩放动画 */
+            transition: opacity 1s ease, transform 1s ease, transform 0.3s ease; 
         }
 
         .gallery img:hover {
-            transform: scale(1.1); /* 鼠标悬停时放大图片 */
-            box-shadow: 0 8px 16px rgba(255, 165, 0, 0.6); /* 添加橘色阴影效果 */
+            transform: scale(1.1); 
+            box-shadow: 0 8px 16px rgba(255, 165, 0, 0.6); 
         }
 
         .gallery img.visible {
@@ -83,12 +83,12 @@
     </style>
 </head>
 <body>
-    <!-- 黑色半透明条 -->
+  
     <div class="fixed-bar"></div>
     
     <h1>Itch.io</h1>
 
-    <!-- 图片库 -->
+   
     <div class="gallery">
         <a href="https://xiaodi701.itch.io/dreamforme" target="_blank">
             <img src="city.png" alt="City">
@@ -111,7 +111,7 @@
     </div>
 
     <script>
-        // 滚动时让图片逐渐显现
+      
         const images = document.querySelectorAll('.gallery img');
 
         const observer = new IntersectionObserver((entries) => {

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- 引入像素风格字体 -->
+   
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         * {
@@ -16,14 +16,14 @@
             min-block-size: 100%;
             display: grid;
             padding-block: 5vh;
-            background: #060270; /* 背景基色 */
+            background: #060270; 
             place-items: center;
             background-image: 
-                linear-gradient(to top, rgba(6, 2, 112, 1) 20%, rgba(6, 2, 112, 0) 100%), /* 渐变透明 */
-                radial-gradient(circle, #030140 30px, transparent 30px), /* 深色波点 */
-                radial-gradient(circle, #030140 30px, transparent 30px); /* 第二层波点 */
-            background-size: 50px 50px, 100px 100px, 100px 100px; /* 不同层的间距 */
-            background-position: 0 100%, 0 0, 50px 50px; /* 调整渐变和波点位置 */
+                linear-gradient(to top, rgba(6, 2, 112, 1) 20%, rgba(6, 2, 112, 0) 100%), 
+                radial-gradient(circle, #030140 30px, transparent 30px), 
+                radial-gradient(circle, #030140 30px, transparent 30px); 
+            background-size: 50px 50px, 100px 100px, 100px 100px; 
+            background-position: 0 100%, 0 0, 50px 50px;
             animation: move-dots 10s infinite linear;
         }
 
@@ -49,8 +49,8 @@
             gap: 2rem;
             grid-auto-flow: dense;
             grid-template-columns: repeat(4, 30ch);
-            justify-content: center; /* 水平居中 */
-            align-items: start; /* 垂直方向从顶部开始 */
+            justify-content: center; 
+            align-items: start; 
         }
 
         .txt {
@@ -70,7 +70,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: 'Press Start 2P', cursive; /* 替换字体为像素风格 */
+            font-family: 'Press Start 2P', cursive; 
         }
 
         .txt img {

@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>四分区渐变效果</title>
-    <link rel="stylesheet" href="https://use.typekit.net/pbe3vap.css"> <!-- Adobe Fonts 链接 -->
+    <link rel="stylesheet" href="https://use.typekit.net/pbe3vap.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <div class="quadrant top-left">
+      
+        <div class="quadrant top-left" data-href="first.html">
             <div class="text">First<br>Half</div>
             <div class="inner-square square-240"></div>
             <div class="inner-square square-230"></div>
@@ -21,7 +22,9 @@
             <div class="inner-square square-170"></div>
             <div class="inner-square square-160"></div>
         </div>
-        <div class="quadrant top-right">
+
+        
+        <div class="quadrant top-right"data-href="second.html">
             <div class="text">Second<br>Half</div>
             <div class="inner-square square-240"></div>
             <div class="inner-square square-230"></div>
@@ -33,7 +36,9 @@
             <div class="inner-square square-170"></div>
             <div class="inner-square square-160"></div>
         </div>
-        <div class="quadrant bottom-left">
+
+      
+        <div class="quadrant bottom-left" data-href="head.html">
             <div class="text">Itch</div>
             <div class="inner-square square-240"></div>
             <div class="inner-square square-230"></div>
@@ -45,7 +50,9 @@
             <div class="inner-square square-170"></div>
             <div class="inner-square square-160"></div>
         </div>
-        <div class="quadrant bottom-right">
+
+      
+        <div class="quadrant bottom-right" data-href="aboutme.html">
             <div class="text">Me.</div>
             <div class="inner-square square-240"></div>
             <div class="inner-square square-230"></div>
@@ -58,5 +65,19 @@
             <div class="inner-square square-160"></div>
         </div>
     </div>
+
+  
+    <script>
+       
+        const quadrants = document.querySelectorAll('.quadrant[data-href]');
+
+      
+        quadrants.forEach(quadrant => {
+            quadrant.addEventListener('click', () => {
+                const href = quadrant.getAttribute('data-href');
+                window.location.href = href;
+            });
+        });
+    </script>
 </body>
 </html>
