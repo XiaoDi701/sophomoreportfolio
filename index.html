@@ -1,147 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- 引入像素风格字体 -->
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0;
-        }
-        body {
-            min-block-size: 100%;
-            display: grid;
-            padding-block: 5vh;
-            background: #060270; /* 背景基色 */
-            place-items: center;
-            background-image: 
-                linear-gradient(to top, rgba(6, 2, 112, 1) 20%, rgba(6, 2, 112, 0) 100%), /* 渐变透明 */
-                radial-gradient(circle, #030140 30px, transparent 30px), /* 深色波点 */
-                radial-gradient(circle, #030140 30px, transparent 30px); /* 第二层波点 */
-            background-size: 50px 50px, 100px 100px, 100px 100px; /* 不同层的间距 */
-            background-position: 0 100%, 0 0, 50px 50px; /* 调整渐变和波点位置 */
-            animation: move-dots 10s infinite linear;
-        }
-
-        @keyframes move-dots {
-            0% {
-                background-position: 0 100%, 0 0, 50px 50px;
-            }
-            100% {
-                background-position: 0 100%, 100px 100px, 150px 150px;
-            }
-        }
-
-        @keyframes slide-fade-in {
-            from {
-                opacity: 0;
-                box-shadow: none;
-                transform: scale(.0) translate(15vh);
-            }
-        }
-
-        .card {
-            display: grid;
-            gap: 2rem;
-            grid-auto-flow: dense;
-            grid-template-columns: repeat(4, 30ch);
-            justify-content: center; /* 水平居中 */
-            align-items: start; /* 垂直方向从顶部开始 */
-        }
-
-        .txt {
-            overflow: hidden;
-            animation: slide-fade-in both;
-            animation-timeline: view();
-            animation-range: contain 0% contain 50%;
-            border-radius: 10px;
-            line-height: 6;
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-            font-size: 32px;
-            letter-spacing: 5px;
-            color: #fff;
-            width: 100%;
-            height: 100%;
-            background-color: #FFAE01;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Press Start 2P', cursive; /* 替换字体为像素风格 */
-        }
-
-        .txt img {
-            max-width: 100%;
-            max-height: 100%;
-            height: auto;
-            width: auto;
-        }
-
-        .txt:nth-of-type(4n) {
-            grid-column: span 2;
-        }
-
-        .txt:nth-of-type(5n) {
-            grid-column: span 2;
-        }
-
-        .txt:nth-of-type(7n) {
-            grid-column: span 2;
-        }
-    </style>
+    <title>四分区渐变效果</title>
+    <link rel="stylesheet" href="https://use.typekit.net/pbe3vap.css"> <!-- Adobe Fonts 链接 -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="card">
-        <div class="txt" style="grid-column: span 3;">XiaoD</div>
-        <div class="txt" style="grid-column: span 1;" onclick="window.location.href='intro.html'">
-            Intro
+    <div class="container">
+        <div class="quadrant top-left">
+            <div class="text">First<br>Half</div>
+            <div class="inner-square square-240"></div>
+            <div class="inner-square square-230"></div>
+            <div class="inner-square square-220"></div>
+            <div class="inner-square square-210"></div>
+            <div class="inner-square square-200"></div>
+            <div class="inner-square square-190"></div>
+            <div class="inner-square square-180"></div>
+            <div class="inner-square square-170"></div>
+            <div class="inner-square square-160"></div>
         </div>
-        <div class="txt" style="grid-column: span 2; cursor: pointer;" onclick="window.location.href='https://xiaodi701.github.io/dowhativedone/'">
-            <img src="midterm.png" alt="Midterm Image">
+        <div class="quadrant top-right">
+            <div class="text">Second<br>Half</div>
+            <div class="inner-square square-240"></div>
+            <div class="inner-square square-230"></div>
+            <div class="inner-square square-220"></div>
+            <div class="inner-square square-210"></div>
+            <div class="inner-square square-200"></div>
+            <div class="inner-square square-190"></div>
+            <div class="inner-square square-180"></div>
+            <div class="inner-square square-170"></div>
+            <div class="inner-square square-160"></div>
         </div>
-        <div class="txt" style="grid-column: span 2;" onclick="window.location.href='midterm.html'">
-            What I've Done
+        <div class="quadrant bottom-left">
+            <div class="text">Itch</div>
+            <div class="inner-square square-240"></div>
+            <div class="inner-square square-230"></div>
+            <div class="inner-square square-220"></div>
+            <div class="inner-square square-210"></div>
+            <div class="inner-square square-200"></div>
+            <div class="inner-square square-190"></div>
+            <div class="inner-square square-180"></div>
+            <div class="inner-square square-170"></div>
+            <div class="inner-square square-160"></div>
         </div>
-        
-        <div class="txt" style="grid-column: span 2;" onclick="window.location.href='swim.html'">
-            Illusion Summer
+        <div class="quadrant bottom-right">
+            <div class="text">Me.</div>
+            <div class="inner-square square-240"></div>
+            <div class="inner-square square-230"></div>
+            <div class="inner-square square-220"></div>
+            <div class="inner-square square-210"></div>
+            <div class="inner-square square-200"></div>
+            <div class="inner-square square-190"></div>
+            <div class="inner-square square-180"></div>
+            <div class="inner-square square-170"></div>
+            <div class="inner-square square-160"></div>
         </div>
-        <div class="txt" style="grid-column: span 2; cursor: pointer;" onclick="window.location.href='https://xiaodi701.github.io/summer/'">
-            <img src="swim.png" alt="swim Image">
-        </div>
-        <div class="txt"onclick="window.location.href='eye.html'">Pupil of Night</div>
-        <div class="txt" style="grid-column: span 2; cursor: pointer;" onclick="window.location.href='https://xiaodi701.github.io/data/'">
-            <img src="spin.png" alt="spin Image">
-        </div>
-        <div class="txt" style="grid-column: span 2; cursor: pointer;" onclick="window.location.href='https://xiaodi701.github.io/thething/'">
-            <img src="first.png" alt="first Image">
-        </div>
-        <div class="txt" style="grid-column: span 2;" onclick="window.location.href='pods.html'">
-            Lost and Found
-        </div>
-        <div class="txt" style="grid-column: span 2;" onclick="window.location.href='neka.html'">
-            DIY Faces
-        </div>
-        <div class="txt" style="grid-column: span 2; cursor: pointer;" onclick="window.location.href='https://xiaodi701.github.io/neka/'">
-            <img src="second.png" alt="second Image">
-        </div>
-        <div class="txt" style="grid-column: span 2; cursor: pointer;" onclick="window.location.href='https://xiaodi701.github.io/hourglass/'">
-            <img src="3.png" alt="3 Image">
-        </div>
-        <div class="txt" style="grid-column: span 2;" onclick="window.location.href='glass.html'">
-            The Clock
-        </div>
-        <div class="txt" style="grid-column: span 2;" onclick="window.location.href='monster.html'">
-            Color Book
-        </div>
-        <div class="txt" style="grid-column: span 2; cursor: pointer;" onclick="window.location.href='https://xiaodi701.github.io/monster/'">
-            <img src="4.png" alt="4 Image">
-        </div>
-        <div class="txt" style="grid-column: span 4;" onclick="window.location.href='head.html'">What Goes On My Head</div>
-        <div class="txt" style="grid-column: span 4;">Thank U!！</div>
     </div>
 </body>
 </html>

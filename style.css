@@ -1,28 +1,308 @@
-@import url("https://use.typekit.net/pbe3vap.css");
-
-
 body {
-    display: flex; /* 使用 Flexbox 布局 */
-    justify-content: center; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
-    height: 100vh; /* 让 body 占满整个视口高度 */
-    background: #95a5a6; /* 背景颜色 */
-    margin: 0; /* 移除默认外边距 */
-    font-family: 'Skope Regular', sans-serif; /* 应用自定义字体 */
+    display: block;
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 .card {
-    display: grid; /* 使用网格布局 */
-    gap: 2rem; /* 卡片之间的间距 */
-    grid-auto-flow: dense; /* 自动调整布局 */
-    grid-template-columns: repeat(4, 30ch); /* 定义 4 列，每列宽度为 30ch */
-    max-width: 90vw; /* 限制最大宽度为视口宽度的 90% */
-    max-height: 90vh; /* 限制最大高度为视口高度的 90% */
-    margin: auto; /* 确保内容在父容器中自动居中 */
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    width: 100%;
+    max-width: 1200px;
+    min-height: 100vh;
+    padding: 2rem;
 }
 
-.txt img {
-    aspect-ratio: 1 / 1; /* 强制 1:1 比例 */
-    object-fit: contain; /* 保持图片内容完整 */
+.txt {
+    min-width: 100px;
+    max-width: 100%;
+    text-align: center;
+    padding: 1rem;
 }
 
+
+
+@media (max-width: 1024px) {
+    .card {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 适应较小屏幕 */
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* 适应手机 */
+    }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    overflow: hidden;
+}
+
+.container {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.section {
+    background-color: black;
+    transition: background-color 0.5s ease-in-out;
+}
+
+/* 鼠标悬停效果 */
+.section:hover {
+    background-color: white;
+}
+
+/* 各个区域 */
+.top-left { grid-column: 1; grid-row: 1; }
+.top-right { grid-column: 2; grid-row: 1; }
+.bottom-left { grid-column: 1; grid-row: 2; }
+.bottom-right { grid-column: 2; grid-row: 2; }
+
+
+
+
+
+/* 重置默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 设置页面高度为100%视口高度 */
+html, body {
+    height: 100%;
+    font-family: "tt-modernoir", sans-serif; /* 使用 Adobe Fonts 字体 */
+    font-weight: 600; /* 字重 */
+    font-style: normal; /* 字体样式 */
+}
+
+/* 容器设置为全屏，并使用flex布局将四个分区排列 */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* 每个分区的基本样式 */
+.quadrant {
+    width: 50%;
+    height: 50%;
+    background-color: #040E93; /* 默认背景颜色 */
+    transition: background-color 0.5s ease;
+    position: relative;
+    overflow: hidden; /* 防止小正方形超出区域 */
+}
+
+/* 鼠标悬停时的渐变效果 */
+.top-left:hover {
+    background-color: #FF1739; /* 左上角悬停颜色 */
+}
+
+.top-right:hover {
+    background-color: #FFB517; /* 右上角悬停颜色 */
+}
+
+.bottom-left:hover {
+    background-color: #EBEFF6; /* 左下角悬停颜色 */
+}
+
+.bottom-right:hover {
+    background-color: #0C1C23; /* 右下角悬停颜色 */
+}
+
+/* 小正方形的基本样式 */
+.inner-square {
+    width: 70px; /* 初始大小为70px */
+    height: 70px;
+    position: absolute;
+    transition: all 0.3s ease; /* 添加过渡效果 */
+}
+
+/* 根据分区位置调整小正方形的位置 */
+.top-left .inner-square {
+    bottom: 0;
+    right: 0;
+}
+
+.top-right .inner-square {
+    bottom: 0;
+    left: 0;
+}
+
+.bottom-left .inner-square {
+    top: 0;
+    right: 0;
+}
+
+.bottom-right .inner-square {
+    top: 0;
+    left: 0;
+}
+
+/* 不同大小和颜色的小正方形 */
+.square-240 {
+    background-color: #040E93; /* 深蓝色 */
+}
+
+.square-230 {
+    background-color: #FFB517; /* 橙色 */
+}
+
+.square-220 {
+    background-color: #040E93; /* 深蓝色 */
+}
+
+.square-210 {
+    background-color: #FFB517; /* 橙色 */
+}
+
+.square-200 {
+    background-color: #040E93; /* 深蓝色 */
+}
+
+.square-190 {
+    background-color: #FFB517; /* 橙色 */
+}
+
+.square-180 {
+    background-color: #040E93; /* 深蓝色 */
+}
+
+.square-170 {
+    background-color: #FFB517; /* 橙色 */
+}
+
+.square-160 {
+    background-color: #040E93; /* 深蓝色 */
+}
+
+/* 鼠标悬停时小正方形放大 */
+.quadrant:hover .square-240 {
+    width: 480px;
+    height: 480px;
+}
+
+.quadrant:hover .square-230 {
+    width: 470px;
+    height: 470px;
+}
+
+.quadrant:hover .square-220 {
+    width: 400px;
+    height: 400px;
+}
+
+.quadrant:hover .square-210 {
+    width: 393px;
+    height: 393px;
+}
+
+.quadrant:hover .square-200 {
+    width: 255px;
+    height: 255px;
+}
+
+.quadrant:hover .square-190 {
+    width: 250px;
+    height: 250px;
+}
+
+.quadrant:hover .square-180 {
+    width: 207px;
+    height: 207px;
+}
+
+.quadrant:hover .square-170 {
+    width: 205px;
+    height: 205px;
+}
+
+.quadrant:hover .square-160 {
+    width: 160px;
+    height: 160px;
+}
+
+/* 颜色为 #FFB517 的小正方形在悬停时变色 */
+.top-left:hover .square-230,
+.top-left:hover .square-210,
+.top-left:hover .square-190,
+.top-left:hover .square-170 {
+    background-color: #FF1739; /* 左上角悬停颜色 */
+}
+
+.top-right:hover .square-230,
+.top-right:hover .square-210,
+.top-right:hover .square-190,
+.top-right:hover .square-170 {
+    background-color: #FFB517; /* 右上角悬停颜色 */
+}
+
+.bottom-left:hover .square-230,
+.bottom-left:hover .square-210,
+.bottom-left:hover .square-190,
+.bottom-left:hover .square-170 {
+    background-color: #EBEFF6; /* 左下角悬停颜色 */
+}
+
+.bottom-right:hover .square-230,
+.bottom-right:hover .square-210,
+.bottom-right:hover .square-190,
+.bottom-right:hover .square-170 {
+    background-color: #0C1C23; /* 右下角悬停颜色 */
+}
+
+/* 文字样式 */
+.text {
+    position: absolute;
+    font-size: 100px;
+    line-height: 1.2;
+    color: #040E93; /* 默认文字颜色 */
+    writing-mode: vertical-rl; /* 竖排文字 */
+    text-align: left;
+    z-index: 10; /* 确保文字在小正方形之上 */
+}
+
+/* 左上角文字 */
+.top-left .text {
+    top: 50px;
+    left: 50px;
+}
+
+/* 右上角文字 */
+.top-right .text {
+    top: 50px;
+    right: 50px;
+}
+
+/* 左下角文字 */
+.bottom-left .text {
+    bottom: 50px;
+    left: 50px;
+}
+
+/* 右下角文字 */
+.bottom-right .text {
+    bottom: 50px;
+    right: 50px;
+}
