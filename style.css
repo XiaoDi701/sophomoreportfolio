@@ -303,3 +303,12 @@ html, body {
     bottom: 50px;
     right: 50px;
 }
+
+.text {
+    color: white;
+}
+
+
+.quadrant:hover .text {
+    color: #040E93;
+}
