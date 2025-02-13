@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            min-block-size: 100%;
+            padding-block: 5vh;
+            background: #060270;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image: 
+                linear-gradient(to top, rgba(6, 2, 112, 1) 20%, rgba(6, 2, 112, 0) 100%), 
+                radial-gradient(circle, #030140 30px, transparent 30px), 
+                radial-gradient(circle, #030140 30px, transparent 30px);
+            background-size: 50px 50px, 100px 100px, 100px 100px;
+            background-position: 0 100%, 0 0, 50px 50px;
+            animation: move-dots 10s infinite linear;
+        }
+
+        @keyframes move-dots {
+            0% {
+                background-position: 0 100%, 0 0, 50px 50px;
+            }
+            100% {
+                background-position: 0 0, 0 0, 50px 50px;
+            }
+        }
+
+        h1 {
+            color: orange;
+            font-size: 100px;
+            font-weight: bold;
+            text-align: center;
+            font-family: 'Press Start 2P', cursive;
+            margin-bottom: 1em;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px; 
+            max-width: 800px; 
+            justify-content: center;
+        }
+
+        .gallery a {
+            display: block; 
+            text-decoration: none; 
+        }
+
+        .gallery img {
+            width: 100%; 
+            max-width: 350px; 
+            height: auto;
+            border: 3px solid orange;
+            border-radius: 10px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease, transform 0.3s ease; 
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1); 
+            box-shadow: 0 8px 16px rgba(255, 165, 0, 0.6); 
+        }
+
+        .gallery img.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+  
+    <div class="fixed-bar"></div>
+    
+    <h1>Itch.io</h1>
+
+   
+    <div class="gallery">
+        <a href="https://xiaodi701.github.io/textgame/" target="_blank">
+            <img src="fatcat.png" alt="chat">
+        </a>
+    
+    </div>
+
+    <script>
+      
+        const images = document.querySelectorAll('.gallery img');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        images.forEach(img => observer.observe(img));
+    </script>
+</body>
+</html>
